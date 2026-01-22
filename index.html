@@ -42,8 +42,8 @@
             padding: 0 20px;
         }
 
-        /* Video Background */
-        .video-background {
+        /* Video Background - Hero Section */
+        .hero-video-bg {
             position: fixed;
             top: 0;
             left: 0;
@@ -53,24 +53,113 @@
             overflow: hidden;
         }
 
-        .video-background video {
+        .hero-video-bg video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             filter: brightness(0.3);
         }
 
-        .video-overlay {
+        .hero-video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom, 
-                rgba(5, 13, 26, 0.9) 0%, 
-                rgba(5, 13, 26, 0.85) 30%,
-                rgba(5, 13, 26, 0.8) 50%,
+                rgba(5, 13, 26, 0.95) 0%, 
+                rgba(5, 13, 26, 0.85) 50%,
                 rgba(5, 13, 26, 0.9) 100%);
+            z-index: -1;
+        }
+
+        /* Collections Video Background */
+        .collections-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .collections-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.2);
+        }
+
+        .collections-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(5, 13, 26, 0.85) 0%, 
+                rgba(5, 13, 26, 0.75) 100%);
+            z-index: -1;
+        }
+
+        /* Products Video Background */
+        .products-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .products-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.2);
+        }
+
+        .products-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(5, 13, 26, 0.85) 0%, 
+                rgba(5, 13, 26, 0.75) 100%);
+            z-index: -1;
+        }
+
+        /* Story Video Background */
+        .story-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .story-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.2);
+        }
+
+        .story-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(5, 13, 26, 0.85) 0%, 
+                rgba(5, 13, 26, 0.75) 100%);
             z-index: -1;
         }
 
@@ -199,7 +288,7 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section - Mobile Uyumlu */
+        /* Hero Section - Video Arkaplanlı */
         .hero {
             height: 100vh;
             display: flex;
@@ -251,27 +340,29 @@
 
         .hero-buttons {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        /* Button Styles - Küçülttüm */
+        /* Button Styles */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 30px;
+            padding: 14px 35px;
             text-decoration: none;
-            font-weight: 400;
+            font-weight: 500;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            font-size: 12px;
+            font-size: 13px;
             border-radius: 2px;
             white-space: nowrap;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-primary {
@@ -281,8 +372,9 @@
         }
 
         .btn-primary:hover {
-            background-color: rgba(201, 167, 105, 0.1);
-            transform: translateY(-2px);
+            background-color: rgba(201, 167, 105, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .btn-secondary {
@@ -293,10 +385,11 @@
 
         .btn-secondary:hover {
             background-color: var(--gold-light);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(201, 167, 105, 0.3);
         }
 
-        /* Sepete Ekle Butonu - Daha Küçük */
+        /* Sepete Ekle Butonu */
         .btn-cart {
             padding: 8px 20px;
             font-size: 11px;
@@ -310,19 +403,21 @@
 
         .btn-cart:hover {
             background-color: rgba(201, 167, 105, 0.2);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
 
-        /* Collections - Mobile Uyumlu */
+        /* Collections - Video Arkaplanlı */
         .collections {
-            padding: 80px 0;
+            padding: 100px 0;
             position: relative;
-            background-color: rgba(5, 13, 26, 0.9);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .section-subtitle {
@@ -336,65 +431,78 @@
 
         .section-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(28px, 5vw, 48px);
+            font-size: clamp(32px, 6vw, 52px);
             font-weight: 400;
             color: var(--cream);
             position: relative;
             display: inline-block;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 1px;
+            width: 100px;
+            height: 2px;
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
 
         .collections-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .collection-card {
             position: relative;
-            height: 400px;
+            height: 450px;
             overflow: hidden;
-            border-radius: 5px;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(201, 167, 105, 0.1);
+            border-radius: 8px;
+            transition: all 0.5s ease;
+            border: 1px solid rgba(201, 167, 105, 0.15);
+            background: rgba(26, 40, 69, 0.3);
+            backdrop-filter: blur(5px);
         }
 
-        .collection-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .collection-card:hover {
+            border-color: rgba(201, 167, 105, 0.4);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .collection-image-container {
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, transparent 40%, rgba(5, 13, 26, 0.95) 90%);
-            z-index: 2;
+            overflow: hidden;
+            position: relative;
         }
 
         .collection-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .collection-card:hover {
-            border-color: rgba(201, 167, 105, 0.3);
-            transform: translateY(-5px);
+            object-fit: contain;
+            object-position: center;
+            padding: 30px;
+            transition: all 0.8s ease;
         }
 
         .collection-card:hover .collection-image {
-            transform: scale(1.05);
+            transform: scale(1.08);
+        }
+
+        .collection-gradient-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, 
+                rgba(5, 13, 26, 0.95) 0%, 
+                rgba(5, 13, 26, 0.7) 50%,
+                transparent 100%);
         }
 
         .collection-info {
@@ -402,7 +510,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 25px;
+            padding: 30px;
             z-index: 3;
         }
 
@@ -417,96 +525,113 @@
 
         .collection-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
+            font-size: 26px;
             color: var(--cream);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-weight: 500;
         }
 
         .collection-description {
             color: var(--text-light);
-            font-size: 13px;
-            margin-bottom: 15px;
-            line-height: 1.5;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            max-width: 90%;
         }
 
-        /* Products - Mobile Uyumlu */
+        /* Products - Video Arkaplanlı */
         .products {
-            padding: 80px 0;
+            padding: 100px 0;
             position: relative;
-            background-color: rgba(5, 13, 26, 0.95);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
 
         .products-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .products-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(28px, 5vw, 48px);
+            font-size: clamp(32px, 6vw, 52px);
             font-weight: 400;
             color: var(--cream);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .products-subtitle {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--text-light);
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .product-card {
-            background-color: rgba(26, 40, 69, 0.6);
-            border: 1px solid rgba(201, 167, 105, 0.1);
-            transition: all 0.3s ease;
+            background-color: rgba(26, 40, 69, 0.3);
+            border: 1px solid rgba(201, 167, 105, 0.15);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            border-radius: 5px;
-            padding-bottom: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
         }
 
         .product-card:hover {
-            border-color: rgba(201, 167, 105, 0.3);
-            transform: translateY(-5px);
+            border-color: rgba(201, 167, 105, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background: rgba(5, 13, 26, 0.3);
         }
 
         .product-image {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.6s ease;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: all 0.6s ease;
         }
 
         .product-card:hover .product-image {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
 
         .product-info {
-            padding: 20px;
+            padding: 25px;
         }
 
         .product-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
+            font-size: 22px;
             color: var(--cream);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 500;
         }
 
         .product-notes {
             color: var(--text-light);
-            font-size: 12px;
-            margin-bottom: 15px;
+            font-size: 13px;
+            margin-bottom: 20px;
             line-height: 1.5;
+            min-height: 40px;
         }
 
         .product-price {
@@ -517,47 +642,54 @@
 
         .price {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
+            font-size: 22px;
             color: var(--gold);
         }
 
-        /* Story - Mobile Uyumlu */
+        /* Story - Video Arkaplanlı */
         .story {
-            padding: 80px 0;
+            padding: 100px 0;
             position: relative;
-            background-color: rgba(5, 13, 26, 0.9);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
 
         .story-content {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
 
-        .story-image {
-            height: 400px;
+        .story-image-container {
+            height: 500px;
             overflow: hidden;
-            border-radius: 5px;
+            border-radius: 10px;
             border: 1px solid rgba(201, 167, 105, 0.2);
+            position: relative;
         }
 
-        .story-image img {
+        .story-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center;
+            padding: 40px;
         }
 
         .story-text {
             text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .story-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(28px, 5vw, 40px);
+            font-size: clamp(32px, 6vw, 48px);
             font-weight: 400;
             color: var(--cream);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             line-height: 1.2;
         }
 
@@ -567,30 +699,30 @@
         }
 
         .story-paragraph {
-            font-size: 15px;
+            font-size: 16px;
             color: var(--text-light);
-            margin-bottom: 20px;
-            line-height: 1.6;
+            margin-bottom: 25px;
+            line-height: 1.7;
         }
 
         .signature {
-            margin-top: 30px;
+            margin-top: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         .signature-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
+            font-size: 20px;
             color: var(--gold);
             font-style: italic;
         }
 
-        /* Footer - Mobile Uyumlu */
+        /* Footer */
         footer {
-            padding: 60px 0 30px;
+            padding: 80px 0 40px;
             background-color: rgba(5, 13, 26, 0.95);
             border-top: 1px solid rgba(201, 167, 105, 0.1);
         }
@@ -663,16 +795,16 @@
         .newsletter-form {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .newsletter-input {
-            padding: 12px;
+            padding: 14px;
             background-color: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(201, 167, 105, 0.2);
             color: var(--cream);
             font-size: 14px;
-            border-radius: 3px;
+            border-radius: 4px;
         }
 
         .newsletter-input:focus {
@@ -688,7 +820,7 @@
             font-size: 13px;
         }
 
-        /* Modal (Popup) Stilleri */
+        /* Modal (Popup) */
         .modal {
             display: none;
             position: fixed;
@@ -696,7 +828,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(5, 13, 26, 0.95);
+            background-color: rgba(5, 13, 26, 0.98);
             z-index: 2000;
             align-items: center;
             justify-content: center;
@@ -706,9 +838,9 @@
         .modal-content {
             background-color: rgba(26, 40, 69, 0.95);
             border: 1px solid var(--gold);
-            border-radius: 10px;
-            padding: 30px;
-            max-width: 600px;
+            border-radius: 12px;
+            padding: 35px;
+            max-width: 700px;
             width: 100%;
             position: relative;
             animation: modalFadeIn 0.3s ease;
@@ -735,8 +867,8 @@
             color: var(--gold);
             font-size: 24px;
             cursor: pointer;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -746,61 +878,64 @@
 
         .modal-close:hover {
             background-color: rgba(201, 167, 105, 0.1);
+            transform: rotate(90deg);
         }
 
         .modal-header {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: center;
         }
 
         .modal-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
+            font-size: 32px;
             color: var(--gold);
             margin-bottom: 10px;
         }
 
         .modal-subtitle {
             color: var(--text-light);
-            font-size: 14px;
+            font-size: 15px;
         }
 
         .modal-body {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .modal-features {
             list-style: none;
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         .modal-features li {
-            padding: 8px 0;
+            padding: 10px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-light);
             font-size: 14px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .modal-features li i {
             color: var(--gold);
+            font-size: 12px;
         }
 
         .modal-price {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 32px;
+            font-size: 36px;
             color: var(--gold);
             text-align: center;
-            margin: 20px 0;
+            margin: 25px 0;
+            font-weight: 500;
         }
 
         .modal-actions {
             display: flex;
             gap: 15px;
             justify-content: center;
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
         /* Mobile Responsive */
@@ -813,13 +948,14 @@
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 80%;
+                width: 85%;
                 height: 100vh;
                 background-color: rgba(5, 13, 26, 0.98);
-                backdrop-filter: blur(10px);
+                backdrop-filter: blur(15px);
                 padding: 80px 30px 30px;
                 transition: right 0.3s ease;
                 z-index: 999;
+                border-left: 1px solid rgba(201, 167, 105, 0.2);
             }
 
             nav.active {
@@ -828,12 +964,12 @@
 
             nav ul {
                 flex-direction: column;
-                gap: 20px;
+                gap: 25px;
             }
 
             nav ul li a {
                 font-size: 16px;
-                padding: 10px 0;
+                padding: 12px 0;
                 display: block;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
@@ -845,6 +981,7 @@
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 15px;
             }
 
             .btn {
@@ -852,12 +989,18 @@
                 max-width: 300px;
             }
 
-            .story-image {
-                height: 300px;
+            .collection-card,
+            .product-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .story-image-container {
+                height: 400px;
             }
 
             .modal-content {
-                padding: 20px;
+                padding: 25px;
             }
 
             .modal-actions {
@@ -886,20 +1029,28 @@
             .collections-grid,
             .products-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
 
-            .product-card {
-                max-width: 350px;
-                margin: 0 auto;
+            .collection-card {
+                height: 400px;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .product-image-container {
+                height: 300px;
+                padding: 20px;
+            }
+
+            .story-image-container {
+                height: 350px;
             }
 
             .modal {
-                padding: 10px;
+                padding: 15px;
+            }
+
+            .modal-title {
+                font-size: 28px;
             }
         }
 
@@ -911,31 +1062,56 @@
             .section-title,
             .products-title,
             .story-title {
-                font-size: 24px;
+                font-size: 28px;
             }
 
             .collection-card {
                 height: 350px;
             }
 
+            .collection-image,
             .product-image {
-                height: 250px;
+                padding: 15px;
+            }
+
+            .collection-info,
+            .product-info {
+                padding: 20px;
+            }
+
+            .modal-content {
+                padding: 20px;
             }
 
             .modal-title {
                 font-size: 24px;
             }
+
+            .modal-price {
+                font-size: 30px;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Video Background -->
-    <div class="video-background">
+    <!-- Hero Video Background -->
+    <div class="hero-video-bg">
         <video autoplay muted loop playsinline>
             <source src="sares.mp4" type="video/mp4">
-            Tarayıcınız video etiketini desteklemiyor.
         </video>
-        <div class="video-overlay"></div>
+        <div class="hero-video-overlay"></div>
     </div>
 
     <!-- Header -->
@@ -943,7 +1119,7 @@
         <div class="container header-container">
             <a href="#" class="logo">
                 <div class="logo-circle">
-                    <!-- YUVARLAK LOGO - Kendi logonuzu buraya ekleyin -->
+                    <!-- YUVARLAK LOGO -->
                     <img src="https://i.hizliresim.com/93kr3gy.png" alt="SARE'S Logo" class="logo-img">
                 </div>
                 <div class="logo-text">SARE<span class="logo-apostrophe">'S</span></div>
@@ -977,7 +1153,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content fade-in">
                 <span class="hero-subtitle">Lacivert ve Altın Lüks</span>
                 <h1 class="hero-title">SARE'S <span>Parfüm</span></h1>
                 <p class="hero-description">Zarafetin derin tonlarında, lacivert ve altın uyumunun lüks buluşması. Her biri el yapımı, sınırlı sayıda üretilen özel parfümler.</p>
@@ -989,17 +1165,28 @@
         </div>
     </section>
 
-    <!-- Collections -->
+    <!-- Collections Section with Video Background -->
     <section class="collections" id="collections">
+        <!-- Collections Video Background -->
+        <div class="collections-video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="sares.mp4" type="video/mp4">
+            </video>
+            <div class="collections-video-overlay"></div>
+        </div>
+        
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <div class="section-subtitle">Seçkin Koleksiyonlar</div>
                 <h2 class="section-title">Lacivert Serisi</h2>
             </div>
             
             <div class="collections-grid">
-                <div class="collection-card">
-                    <img src="https://i.hizliresim.com/c8uoj7m.jpg" alt="Midnight Symphony" class="collection-image">
+                <div class="collection-card fade-in">
+                    <div class="collection-image-container">
+                        <img src="https://i.hizliresim.com/c8uoj7m.jpg" alt="Midnight Symphony" class="collection-image">
+                        <div class="collection-gradient-overlay"></div>
+                    </div>
                     <div class="collection-info">
                         <span class="collection-number">COLLECTION I</span>
                         <h3 class="collection-name">Midnight Symphony</h3>
@@ -1008,8 +1195,11 @@
                     </div>
                 </div>
                 
-                <div class="collection-card">
-                    <img src="https://i.hizliresim.com/8jfr65v.jpg" alt="Royal Navy" class="collection-image">
+                <div class="collection-card fade-in">
+                    <div class="collection-image-container">
+                        <img src="https://i.hizliresim.com/8jfr65v.jpg" alt="Royal Navy" class="collection-image">
+                        <div class="collection-gradient-overlay"></div>
+                    </div>
                     <div class="collection-info">
                         <span class="collection-number">COLLECTION II</span>
                         <h3 class="collection-name">Royal Navy</h3>
@@ -1018,8 +1208,11 @@
                     </div>
                 </div>
                 
-                <div class="collection-card">
-                    <img src="https://i.hizliresim.com/dh7p9nl.jpg" alt="Sapphire Elixir" class="collection-image">
+                <div class="collection-card fade-in">
+                    <div class="collection-image-container">
+                        <img src="https://i.hizliresim.com/dh7p9nl.jpg" alt="Sapphire Elixir" class="collection-image">
+                        <div class="collection-gradient-overlay"></div>
+                    </div>
                     <div class="collection-info">
                         <span class="collection-number">COLLECTION III</span>
                         <h3 class="collection-name">Sapphire Elixir</h3>
@@ -1031,20 +1224,30 @@
         </div>
     </section>
 
-    <!-- Products -->
+    <!-- Products Section with Video Background -->
     <section class="products" id="products">
+        <!-- Products Video Background -->
+        <div class="products-video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="sares.mp4" type="video/mp4">
+            </video>
+            <div class="products-video-overlay"></div>
+        </div>
+        
         <div class="container">
-            <div class="products-header">
+            <div class="products-header fade-in">
                 <h2 class="products-title">Lüks Parfüm Koleksiyonu</h2>
                 <p class="products-subtitle">Her biri el yapımı, sınırlı sayıda üretilen ve lacivert-altın detayları ile süslenmiş özel parfümlerimiz.</p>
             </div>
             
             <div class="products-grid">
-                <div class="product-card">
-                    <img src="https://i.hizliresim.com/c8uoj7m.jpg" alt="Midnight Symphony" class="product-image">
+                <div class="product-card fade-in">
+                    <div class="product-image-container">
+                        <img src="https://i.hizliresim.com/c8uoj7m.jpg" alt="Midnight Symphony" class="product-image">
+                    </div>
                     <div class="product-info">
                         <h3 class="product-name">Midnight Symphony</h3>
-                        <p class="product-notes">Siyah orkide, kara biber, deri ve nadir oud notaları.</p>
+                        <p class="product-notes">Siyah orkide, kara biber, deri ve nadir oud notaları</p>
                         <div class="product-price">
                             <span class="price">₺3,250</span>
                             <a href="#" class="btn btn-cart">Sepete Ekle</a>
@@ -1052,11 +1255,13 @@
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <img src="https://i.hizliresim.com/8jfr65v.jpg" alt="Royal Navy" class="product-image">
+                <div class="product-card fade-in">
+                    <div class="product-image-container">
+                        <img src="https://i.hizliresim.com/8jfr65v.jpg" alt="Royal Navy" class="product-image">
+                    </div>
                     <div class="product-info">
                         <h3 class="product-name">Royal Navy</h3>
-                        <p class="product-notes">Lavanta, sedir ağacı, misk ve kehribar notaları.</p>
+                        <p class="product-notes">Lavanta, sedir ağacı, misk ve kehribar notaları</p>
                         <div class="product-price">
                             <span class="price">₺2,950</span>
                             <a href="#" class="btn btn-cart">Sepete Ekle</a>
@@ -1064,11 +1269,13 @@
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <img src="https://i.hizliresim.com/dh7p9nl.jpg" alt="Sapphire Elixir" class="product-image">
+                <div class="product-card fade-in">
+                    <div class="product-image-container">
+                        <img src="https://i.hizliresim.com/dh7p9nl.jpg" alt="Sapphire Elixir" class="product-image">
+                    </div>
                     <div class="product-info">
                         <h3 class="product-name">Sapphire Elixir</h3>
-                        <p class="product-notes">Yasemin, bergamot, vanilya ve sandal ağacı notaları.</p>
+                        <p class="product-notes">Yasemin, bergamot, vanilya ve sandal ağacı notaları</p>
                         <div class="product-price">
                             <span class="price">₺3,100</span>
                             <a href="#" class="btn btn-cart">Sepete Ekle</a>
@@ -1076,11 +1283,13 @@
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <img src="https://i.hizliresim.com/rfg7awn.jpg" alt="Noir Essence" class="product-image">
+                <div class="product-card fade-in">
+                    <div class="product-image-container">
+                        <img src="https://i.hizliresim.com/rfg7awn.jpg" alt="Noir Essence" class="product-image">
+                    </div>
                     <div class="product-info">
                         <h3 class="product-name">Noir Essence</h3>
-                        <p class="product-notes">Karanfil, tarçın, vanilya ve deri notaları.</p>
+                        <p class="product-notes">Karanfil, tarçın, vanilya ve deri notaları</p>
                         <div class="product-price">
                             <span class="price">₺2,850</span>
                             <a href="#" class="btn btn-cart">Sepete Ekle</a>
@@ -1089,25 +1298,33 @@
                 </div>
             </div>
             
-            <div style="margin-top: 40px; text-align: center;">
-                <a href="#" class="btn btn-secondary" style="padding: 12px 40px;">TÜM KOLEKSİYONU GÖR</a>
+            <div style="margin-top: 50px; text-align: center;" class="fade-in">
+                <a href="#" class="btn btn-secondary" style="padding: 14px 45px;">TÜM KOLEKSİYONU GÖR</a>
             </div>
         </div>
     </section>
 
-    <!-- Story -->
+    <!-- Story Section with Video Background -->
     <section class="story" id="story">
+        <!-- Story Video Background -->
+        <div class="story-video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="sares.mp4" type="video/mp4">
+            </video>
+            <div class="story-video-overlay"></div>
+        </div>
+        
         <div class="container">
             <div class="story-content">
-                <div class="story-image">
-                    <img src="https://i.hizliresim.com/5w7hql8.jpg" alt="SARE'S Hikayesi">
+                <div class="story-image-container fade-in">
+                    <img src="https://i.hizliresim.com/5w7hql8.jpg" alt="SARE'S Hikayesi" class="story-image">
                 </div>
-                <div class="story-text">
+                <div class="story-text fade-in">
                     <h2 class="story-title">SARE'S <span>Hikayesi</span></h2>
                     <p class="story-paragraph">2012 yılında Paris'te kurulan SARE'S, lacivert ve altın tonlarının lüks uyumuyla parfüm dünyasına yeni bir soluk getirme vizyonuyla yola çıktı.</p>
                     <p class="story-paragraph">Her bir SARE'S parfümü, dünyanın en nadir esanslarının ustalıkla harmanlanmasıyla oluşturulur. Lacivert cam şişelerimiz, 24 ayar altın varak detayları ile süslenmiş olup sadece sınırlı sayıda üretilir.</p>
                     <div class="signature">
-                        <div class="logo-circle" style="width: 40px; height: 40px;">
+                        <div class="logo-circle" style="width: 45px; height: 45px;">
                             <img src="https://i.hizliresim.com/d9m577d.png" alt="SARE'S Logo" class="logo-img">
                         </div>
                         <div class="signature-name">Sare Elizondo, Kurucu</div>
@@ -1121,7 +1338,7 @@
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
+                <div class="footer-column fade-in">
                     <div class="footer-logo">
                         <div class="footer-logo-circle">
                             <img src="https://i.hizliresim.com/d9m577d.png" alt="SARE'S Logo" class="footer-logo-img">
@@ -1131,7 +1348,7 @@
                     <p class="footer-description">SARE'S, lacivert ve altın tonlarında lüks parfüm dünyasında yeni bir standart belirlemektedir. Her bir parfümümüz el yapımı olup sınırlı sayıda üretilmektedir.</p>
                 </div>
                 
-                <div class="footer-column">
+                <div class="footer-column fade-in">
                     <h3 class="footer-title">Hızlı Erişim</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Ana Sayfa</a></li>
@@ -1142,7 +1359,7 @@
                     </ul>
                 </div>
                 
-                <div class="footer-column">
+                <div class="footer-column fade-in">
                     <h3 class="footer-title">Müşteri Hizmetleri</h3>
                     <ul class="footer-links">
                         <li><a href="#">Sipariş Takibi</a></li>
@@ -1153,12 +1370,12 @@
                     </ul>
                 </div>
                 
-                <div class="footer-column">
+                <div class="footer-column fade-in">
                     <h3 class="footer-title">Bültenimize Katılın</h3>
                     <p class="footer-description" style="margin-bottom: 15px;">Yeni koleksiyonlarımızdan ve özel indirimlerden haberdar olun.</p>
                     <form class="newsletter-form">
                         <input type="email" placeholder="E-posta adresiniz" class="newsletter-input" required>
-                        <button type="submit" class="btn btn-secondary" style="padding: 12px;">Abone Ol</button>
+                        <button type="submit" class="btn btn-secondary" style="padding: 14px;">Abone Ol</button>
                     </form>
                 </div>
             </div>
@@ -1206,10 +1423,20 @@
         
         navToggle.addEventListener('click', () => {
             mainNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
         
         closeNav.addEventListener('click', () => {
             mainNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close nav when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
         });
         
         // Header scroll effect
@@ -1217,8 +1444,10 @@
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
                 header.style.padding = '10px 0';
+                header.style.backgroundColor = 'rgba(5, 13, 26, 0.98)';
             } else {
                 header.style.padding = '15px 0';
+                header.style.backgroundColor = 'rgba(5, 13, 26, 0.95)';
             }
         });
         
@@ -1232,21 +1461,21 @@
             1: {
                 name: 'Midnight Symphony',
                 collection: 'Lacivert Serisi - Collection I',
-                description: 'Geceye özel derin ve gizemli notaların lacivert dokunuşuyla buluştuğu koleksiyon. Siyah orkide, kara biber, deri ve nadir oud notalarının zarif uyumu.',
+                description: 'Geceye özel derin ve gizemli notaların lacivert dokunuşuyla buluştuğu koleksiyon. Siyah orkide, kara biber, deri ve nadir oud notalarının zarif uyumu. 24 ayar altın varak detayları ile süslenmiş el yapımı lacivert cam şişe.',
                 price: '₺3,250',
                 notes: 'Siyah orkide, kara biber, deri ve nadir oud notaları'
             },
             2: {
                 name: 'Royal Navy',
                 collection: 'Lacivert Serisi - Collection II',
-                description: 'Kraliyet lacivert tonlarında, nadir esansların kusursuz uyumu. Lavanta, sedir ağacı, misk ve kehribar notalarının asil buluşması.',
+                description: 'Kraliyet lacivert tonlarında, nadir esansların kusursuz uyumu. Lavanta, sedir ağacı, misk ve kehribar notalarının asil buluşması. Özel tasarım lacivert şişe ve altın varak detayları.',
                 price: '₺2,950',
                 notes: 'Lavanta, sedir ağacı, misk ve kehribar notaları'
             },
             3: {
                 name: 'Sapphire Elixir',
                 collection: 'Lacivert Serisi - Collection III',
-                description: 'Safir mavisi ve altın detayların zarif birleşimi. Yasemin, bergamot, vanilya ve sandal ağacı notalarının büyülü harmonisi.',
+                description: 'Safir mavisi ve altın detayların zarif birleşimi. Yasemin, bergamot, vanilya ve sandal ağacı notalarının büyülü harmonisi. Sınırlı sayıda üretilmiş özel koleksiyon parfümü.',
                 price: '₺3,100',
                 notes: 'Yasemin, bergamot, vanilya ve sandal ağacı notaları'
             }
@@ -1291,18 +1520,22 @@
             newsletterForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const emailInput = newsletterForm.querySelector('input[type="email"]');
+                const button = newsletterForm.querySelector('button');
+                
                 if (emailInput.value) {
-                    alert('SARE\'S bültenine başarıyla abone oldunuz. Teşekkür ederiz!');
+                    // Animation
+                    const originalText = button.textContent;
+                    button.innerHTML = '<i class="fas fa-check"></i>';
+                    button.style.background = 'var(--gold-dark)';
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.style.background = '';
+                        alert('SARE\'S bültenine başarıyla abone oldunuz. Teşekkür ederiz!');
+                    }, 1500);
+                    
                     emailInput.value = '';
                 }
-            });
-        }
-        
-        // Video error handling
-        const video = document.querySelector('video');
-        if (video) {
-            video.addEventListener('error', () => {
-                console.log('Video yüklenemedi. Lütfen sares.mp4 dosyasının HTML ile aynı klasörde olduğundan emin olun.');
             });
         }
         
@@ -1315,15 +1548,48 @@
                 e.preventDefault();
                 const targetElement = document.querySelector(href);
                 if (targetElement) {
-                    // Close mobile nav if open
-                    mainNav.classList.remove('active');
-                    
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
             });
+        });
+        
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Video fallback
+        const videos = document.querySelectorAll('video');
+        videos.forEach(video => {
+            video.addEventListener('error', () => {
+                console.log('Video yüklenemedi. Lütfen sares.mp4 dosyasının HTML ile aynı klasörde olduğundan emin olun.');
+                video.style.display = 'none';
+            });
+        });
+        
+        // Initialize animations on load
+        window.addEventListener('load', () => {
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelector('.hero-content').classList.add('visible');
+            }, 300);
         });
     </script>
 </body>
